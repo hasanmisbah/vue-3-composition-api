@@ -1,17 +1,35 @@
 module.exports = {
-  root: true,
-  env: {
-    node: true
-  },
   extends: [
-    'plugin:vue/vue3-essential',
-    '@vue/standard'
+    'plugin:vue/vue3-recommended',
+    'eslint:recommended'
   ],
-  parserOptions: {
-    parser: '@babel/eslint-parser'
-  },
+  // parser: 'babel-eslint',
+  // parserOptions: {
+  //   ecmaVersion: 8,
+  //   sourceType: 'module',
+  //   ecmaFeatures: {
+  //     modules: true,
+  //     allowImportExportEverywhere: true
+  //   },
+  // },
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+    'no-unused-vars': 1,
+    quotes: [2, 'single',
+      {
+        avoidEscape: true,
+        allowTemplateLiterals: true
+      }
+    ],
+    semi: [2, 'always'],
+    'no-unreachable': 'off',
+    'vue/html-quotes': ['off', 'double', { avoidEscape: false }],
+    'vue/multi-word-component-names': 'off',
+    'vue/require-default-prop': 'off',
+    'vue/html-closing-bracket-spacing': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'vue/multiline-html-element-content-newline': 'off',
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/valid-next-tick': [0, 'never'],
+    'vue/no-v-html': [0, 'never']
   }
-}
+};

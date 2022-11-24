@@ -1,10 +1,19 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <RouterLink to="/">Home</RouterLink>
+    |
+    <RouterLink to="/about">About</RouterLink>
   </nav>
-  <router-view/>
+  <RouterView/>
+  
+  <footer id="footer">
+    {{ store.name }}
+  </footer>
 </template>
+
+<script setup>
+import { store } from '@/composables/composable';
+</script>
 
 <style lang="scss">
 #app {
@@ -26,5 +35,12 @@ nav {
       color: #42b983;
     }
   }
+}
+
+#footer {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #013243;
+  color: #fff;
 }
 </style>

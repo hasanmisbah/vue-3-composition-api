@@ -1,5 +1,26 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <Form
+      v-model:email="state.email"
+      v-model:name="state.name"
+    />
   </div>
+  
+  {{ state }}
 </template>
+
+<script setup>
+
+import { store } from '@/composables/composable';
+import { onMounted, reactive } from 'vue';
+import Form from '@/components/Form';
+
+const state = reactive({
+  name: '',
+  email: ''
+});
+
+onMounted(() => {
+  store.updateApplication('About');
+});
+</script>
